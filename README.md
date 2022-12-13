@@ -10,7 +10,7 @@
  
 ## Hosted/Deployed
 
-https://github.com/suresh9058/react-ordering-app-schlafender
+https://shiny-fairy-94b9ad.netlify.app/
 
 ## Install Dependencies
 
