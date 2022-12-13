@@ -5,7 +5,6 @@
 - Fetching the menu data from API
 - Add the menu items to the cart
 - Ordering the cart items
-- Used Redux to maintain the state of menu items
 - Kept validations on entering the user data before ordering
  
 ## Hosted/Deployed
