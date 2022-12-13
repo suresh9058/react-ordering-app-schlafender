@@ -30,15 +30,7 @@ const cartReducer = (state, action) => {
     }else{
       updatedItems = state.items.concat(action.item);//[..state.items, action.item]
     }
-
-   /*  const index = state.items.findIndex(el => el.id === action.item.id);
-      if (index === -1) {
-         updatedItems = [...state.items, action.item];
-      } else {
-         updatedItems = [...state.items];
-         updatedItems[index].amount += action.item.amount;
-      } */
-    
+   
     return {
       items: updatedItems,
       totalAmountBill: updatedTotalAmountBill
@@ -62,14 +54,6 @@ const cartReducer = (state, action) => {
       updatedItems[existingCartItemIndex] = updatedItem;
     }
 
-    /* const index = state.items.findIndex(el => el.id === action.id);
-      if (state.items[index].amount === 1) {
-         updatedItems = state.items.filter(el => el.id !== action.id);
-      } else {
-         updatedItems = [...state.items];
-         updatedItems[index].amount -= 1;
-      } */
-    //if(updatedTotalAmount < 0) updatedTotalAmount = 0;
     return {
       items: updatedItems,
       totalAmountBill: updatedTotalAmountBill
@@ -98,8 +82,6 @@ const CartProvider = (props) => {
     dispatchCartAction({type: 'CLEAR'});
   }
 
-  //console.log('Beofre', cartState.totalAmountBill);
-  
 
   const cartContext = {
     items: cartState.items,
@@ -108,9 +90,7 @@ const CartProvider = (props) => {
     removeItem: removeItemFromCartHandler,
     clearCart: clearCartHandler,
   };
- // console.log(cartState.totalAmountBill,'Just do It', cartContext.totalAmountBill)
-  //console.log(typeof cartState.totalAmountBill, typeof cartContext.totalAmountBill);
-  //console.log(cartState.items,'ctx', cartContext.items)
+
   return (
     <CartContext.Provider value={cartContext}>
       {props.children}
